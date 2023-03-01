@@ -1,6 +1,12 @@
 import abc
 
 class Temperature(abc.ABC):
+    '''
+    This class represents all the temperature units Celsius, Fahrenheit and Kelvin.
+    It contains conversion methods between theses units and returns float number
+    as the calculations results.
+    '''
+    
     def celsius_to_farenheit(temp):
         cel_fah = temp * 9/5 + 32
         return cel_fah
@@ -25,5 +31,14 @@ class Temperature(abc.ABC):
         kel_fah = (temp - 273.15) * 9/5 + 32
         return kel_fah
 
-class Distance(abc.ABC):
+class Length(abc.ABC):
+    pass
+
+class Mass(abc.ABC):
+    pass
+
+class Time(abc.ABC):
+    pass
+
+class Currency(abc.ABC):
     pass
