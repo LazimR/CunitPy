@@ -1,4 +1,6 @@
 import abc
+import requests
+
 
 class Temperature(abc.ABC):
     '''
@@ -7,27 +9,27 @@ class Temperature(abc.ABC):
     as the calculations results.
     '''
     
-    def celsius_to_farenheit(temp):
+    def celsius2fahr(temp):
         cel_fah = temp * 9/5 + 32
         return cel_fah
 
-    def celsius_to_kelvin(temp):
+    def celsius2kelvin(temp):
         cel_kel = temp + 273.15
         return cel_kel 
     
-    def fahrenheit_to_celsius(temp):
+    def fahr2celsius(temp):
         fah_cel = (temp - 32) * 5/9
         return fah_cel
     
-    def fahrenheit_to_kelvin(temp):
+    def fahr2kelvin(temp):
         fah_kel = (temp - 32) * 5/9 + 273.15
         return fah_kel
 
-    def kelvin_to_celsius(temp):
+    def kelvin2celsius(temp):
         kel_cel = temp - 273.15
         return kel_cel
 
-    def kelvin_to_fahrenheit(temp):
+    def kelvin2fahr(temp):
         kel_fah = (temp - 273.15) * 9/5 + 32
         return kel_fah
 
@@ -41,4 +43,10 @@ class Time(abc.ABC):
     pass
 
 class Currency(abc.ABC):
+    """
+    Avaible coins:
+    BRL (Real Brasileiro)
+    USD (Dolar Americano)
+    EUR (Euro)
+    """
     pass
