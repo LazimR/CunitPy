@@ -33,13 +33,13 @@ class Temperature(abc.ABC):
         kel_fah = (temp - 273.15) * 9/5 + 32
         return kel_fah
 
-class Length(abc.ABC):
+class Length(abc.ABC): # cm, m, km...
     pass
 
-class Mass(abc.ABC):
+class Mass(abc.ABC): # mg, g, kg...
     pass
 
-class Time(abc.ABC):
+class Time(abc.ABC): # seconds, minutes, hours...
     pass
 
 class Currency(abc.ABC):
