@@ -4,7 +4,7 @@ import requests
 
 class Temperature(abc.ABC):
     '''
-    This class represents all the temperature units Celsius, Fahrenheit and Kelvin.
+    This class represents the temperature measurement units: Celsius, Fahrenheit and Kelvin.
     It contains conversion methods between theses units and returns float number
     as the calculations results.
     '''
@@ -33,7 +33,12 @@ class Temperature(abc.ABC):
         kel_fah = (temp - 273.15) * 9/5 + 32
         return kel_fah
 
-class Length(abc.ABC): # cm, m, km...
+class Length(abc.ABC):
+    '''
+    This class represents the lenght measurement units: nanometer, millimeter, centimeter, meter, kilometer, yard, feet and mile.
+    It contains conversion methods between theses units and returns float number
+    as the calculations results.
+    '''
     pass
 
 class Mass(abc.ABC): # mg, g, kg...
