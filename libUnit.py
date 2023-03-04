@@ -1,6 +1,6 @@
 import abc
 import requests
-
+import json
 
 class Temperature(abc.ABC):
     '''
@@ -41,7 +41,7 @@ class Length(abc.ABC):
     '''
     pass
 
-class Mass(abc.ABC): # mg, g, kg...
+class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
     pass
 
 class Time(abc.ABC): # seconds, minutes, hours...
@@ -54,4 +54,74 @@ class Currency(abc.ABC):
     USD (Dolar Americano)
     EUR (Euro)
     """
-    pass
+    def USD2BRL(amount):
+        try:    
+            coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-BRL")
+            if coin.status_code == 200:
+                coin = json.loads(coin.content)
+                coin = float(coin['USDBRL']['bid'])*amount
+                return f'{coin:.2f}'
+            else:
+                return "Connection ERROR"
+        except:
+            return "Conversion ERROR"
+    
+    def USD2EUR(amount):
+        try:    
+            coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-EUR")
+            if coin.status_code == 200:
+                coin = json.loads(coin.content)
+                coin = float(coin['USDEUR']['bid'])*amount
+                return f'{coin:.2f}'
+            else:
+                return "Connection ERROR"
+        except:
+            return "Conversion ERROR"
+
+    def EUR2BRL(amount):
+        try:    
+            coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-BRL")
+            if coin.status_code == 200:
+                coin = json.loads(coin.content)
+                coin = float(coin['EURBRL']['bid'])*amount
+                return f'{coin:.2f}'
+            else:
+                return "Connection ERROR"
+        except:
+            return "Conversion ERROR"
+        
+    def EUR2USD(amount):
+        try:    
+            coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-USD")
+            if coin.status_code == 200:
+                coin = json.loads(coin.content)
+                coin = float(coin['EURUSD']['bid'])*amount
+                return f'{coin:.2f}'
+            else:
+                return "Connection ERROR"
+        except:
+            return "Conversion ERROR"
+        
+    def BRL2USD(amount):
+        try:    
+            coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-USD")
+            if coin.status_code == 200:
+                coin = json.loads(coin.content)
+                coin = float(coin['BRLUSD']['bid'])*amount
+                return f'{coin:.2f}'
+            else:
+                return "Connection ERROR"
+        except:
+            return "Conversion ERROR"
+    
+    def BRL2EUR(amount):
+        try:    
+            coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-EUR")
+            if coin.status_code == 200:
+                coin = json.loads(coin.content)
+                coin = float(coin['BRLEUR']['bid'])*amount
+                return f'{coin:.2f}'
+            else:
+                return "Connection ERROR"
+        except:
+            return "Conversion ERROR"

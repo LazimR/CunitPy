@@ -1,14 +1,8 @@
-from libUnit import Temperature
+from libUnit import Currency
 
-tempCel = 15
-tempFah = Temperature.celsius_to_farenheit(tempCel)
-
-print(f'C°: {tempCel}')
-print(f'F°: {tempFah}')
-
-print('---------------')
-tempFah = 99
-tempCel = Temperature.celsius_to_farenheit(tempFah, 1)
-
-print(f'F°: {tempFah}')
-print(f'C°: {tempCel:0.2f}')
+print(Currency.USD2BRL(1))
+print(Currency.USD2EUR(1))
+print(Currency.EUR2BRL(1))
+print(Currency.EUR2USD(1))
+print(Currency.BRL2USD(1))
+print(Currency.BRL2EUR(1))
