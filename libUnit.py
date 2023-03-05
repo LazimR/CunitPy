@@ -48,8 +48,9 @@ class Temperature(abc.ABC):
             return kel_cel
 
     def kelvin2fahr(temp):
-        kel_fah = (temp - 273.15) * 9/5 + 32
-        return kel_fah
+        if Verify.checkValue(temp):
+            kel_fah = (temp - 273.15) * 9/5 + 32
+            return kel_fah
 
 class Length(abc.ABC):
     '''
