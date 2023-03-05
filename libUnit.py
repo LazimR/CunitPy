@@ -48,6 +48,12 @@ class Time(abc.ABC): # seconds, minutes, hours...
     pass
 
 class Currency(abc.ABC):
+    #Padrão de converção de moedas sem registro na API
+    #1 libra = (1/1.20) dólar
+    #1 dólar = 0.0074 iene
+    #1 libra = ((1/1.20) * 0.0074) iene
+    #1 libra = 0.0061666667 iene (aproximando para 7 casas decimais)
+    
     """
     Avaible coins:
     BRL (Real Brasileiro)
