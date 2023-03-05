@@ -2,6 +2,19 @@ import abc
 import requests
 import json
 
+class Verify(abc.ABC):
+    '''
+    This class is a value verifier.
+    It contains a method which verifies the variable type of the parameter
+    and is called by all conversion methods from measurement units classes.
+    '''
+    def checkValue(value):
+        try:
+            float(value)
+        except:
+            print('Invalid value. Numbers only.')
+            return False
+
 class Temperature(abc.ABC):
     '''
     This class represents the temperature measurement units: Celsius, Fahrenheit and Kelvin.
@@ -10,24 +23,29 @@ class Temperature(abc.ABC):
     '''
     
     def celsius2fahr(temp):
-        cel_fah = temp * 9/5 + 32
-        return cel_fah
+        if Verify.checkValue(temp):
+            cel_fah = temp * 9/5 + 32
+            return cel_fah
 
     def celsius2kelvin(temp):
-        cel_kel = temp + 273.15
-        return cel_kel 
+        if Verify.checkValue(temp):
+            cel_kel = temp + 273.15
+            return cel_kel 
     
     def fahr2celsius(temp):
-        fah_cel = (temp - 32) * 5/9
-        return fah_cel
+        if Verify.checkValue(temp):
+            fah_cel = (temp - 32) * 5/9
+            return fah_cel
     
     def fahr2kelvin(temp):
-        fah_kel = (temp - 32) * 5/9 + 273.15
-        return fah_kel
+        if Verify.checkValue(temp):
+            fah_kel = (temp - 32) * 5/9 + 273.15
+            return fah_kel
 
     def kelvin2celsius(temp):
-        kel_cel = temp - 273.15
-        return kel_cel
+        if Verify.checkValue(temp):
+            kel_cel = temp - 273.15
+            return kel_cel
 
     def kelvin2fahr(temp):
         kel_fah = (temp - 273.15) * 9/5 + 32
@@ -39,7 +57,10 @@ class Length(abc.ABC):
     It contains conversion methods between theses units and returns float number
     as the calculations results.
     '''
-    pass
+    def metter2nanometer(lenght):
+        if Verify.checkValue(lenght):
+            pass
+
 
 class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
     pass
