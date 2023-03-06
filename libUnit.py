@@ -55,19 +55,66 @@ class Temperature(abc.ABC):
 
 class Length(abc.ABC):
     '''
-    This class represents the lenght measurement units: nanometer, micrometer
-    millimeter, centimeter, meter, kilometer, yard, feet, inch and mile.
+    This class represents the length measurement units: nanometer, micrometer
+    millimeter, centimeter, meter, kilometer, inch, yard, feet and mile.
     It contains conversion methods between theses units and returns float number
     as the calculations results.
     '''
-    def meter2nanometer(lenght):
-        if Verify.checkValue(lenght):
-            met_nan = lenght * 0.000000001
+    # Nanometer
+    def nanometer2micrometer(length):
+        if Verify.checkValue(length):
+            nan_mic = length * 1000
+            return nan_mic
+
+    def nanometer2millimeter(length):
+        if Verify.checkValue(length):
+            nan_mil = length * 10**6
+            return nan_mil
+
+    def nanometer2centimeter(length):
+        if Verify.checkValue(length):
+            nan_cen = length * 10**7
+            return nan_cen
+
+    def nanometer2meter(length):
+        if Verify.checkValue(length):
+            nan_met = length * 10**9
+            return nan_met
+
+    def nanometer2kilometer(length):
+        if Verify.checkValue(length):
+            nan_kil = length * 10**12
+            return nan_kil
+    
+    def nanometer2inch(length):
+        if Verify.checkValue(length):
+            nan_inc = length * 2.54*10**7
+            return nan_inc
+
+    def nanometer2yard(length):
+        if Verify.checkValue(length):
+            nan_yar = length * 9.144*10**8
+            return nan_yar
+    
+    def nanometer2feet(length):
+        if Verify.checkValue(length):
+            nan_fee = length * 3.048*10**8
+            return nan_fee
+
+    def nanometer2mile(length):
+        if Verify.checkValue(length):
+            nan_mil = length * 1.609*10**12
+            return nan_mil
+    
+    # Meter
+    def meter2nanometer(length):
+        if Verify.checkValue(length):
+            met_nan = length * 0.000000001
             return met_nan
     
-    def meter2micrometer(lenght):
-        if Verify.checkValue(lenght):
-            met_mic = lenght * 0.000001
+    def meter2micrometer(length):
+        if Verify.checkValue(length):
+            met_mic = length * 0.000001
             return met_mic
     
     def meter2millimeter(length):
@@ -85,6 +132,11 @@ class Length(abc.ABC):
             met_kil = length / 1000
             return met_kil
     
+    def meter2inch(length):
+        if Verify.checkValue(length):
+            met_inc = length * 3.28084
+            return met_inc
+
     def meter2yard(length):
         if Verify.checkValue(length):
             met_yar = length * 109361
@@ -100,10 +152,7 @@ class Length(abc.ABC):
             met_mile = length * 1609
             return met_mile
 
-    def meter2inch(length):
-        if Verify.checkValue(length):
-            met_inc = length * 3.28084
-            return met_inc
+
     
 
 class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
