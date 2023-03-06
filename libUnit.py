@@ -68,7 +68,20 @@ class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
     pass
 
 class Time(abc.ABC): # seconds, minutes, hours...
-    pass
+    def sec2min(time):
+        return time/60
+    
+    def sec2hr(time):
+        return time/3600
+    
+    def min2sec(time):
+        return time*60
+
+    def min2hr(time):
+        return time/60
+
+    def hr2sec(time):
+        return time*3600
 
 class Currency(abc.ABC):
     #Padrão de converção de moedas sem registro na API
