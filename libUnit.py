@@ -59,10 +59,51 @@ class Length(abc.ABC):
     It contains conversion methods between theses units and returns float number
     as the calculations results.
     '''
-    def metter2nanometer(lenght):
+    def meter2nanometer(lenght):
         if Verify.checkValue(lenght):
-            pass
+            met_nan = lenght * 0.000000001
+            return met_nan
+    
+    def meter2micrometer(lenght):
+        if Verify.checkValue(lenght):
+            met_mic = lenght * 0.000001
+            return met_mic
+    
+    def meter2millimeter(length):
+        if Verify.checkValue(length):
+            met_mil = length * 1000
+            return met_mil
 
+    def meter2centimeter(length):
+        if Verify.checkValue(length):
+            met_cen = length * 100
+            return met_cen
+
+    def meter2kilometer(length):
+        if Verify.checkValue(length):
+            met_kil = length / 1000
+            return met_kil
+    
+    def meter2yard(length):
+        if Verify.checkValue(length):
+            met_yar = length * 109361
+            return met_yar
+
+    def meter2feet(length):
+        if Verify.checkValue(length):
+            met_fee = length * 3.28084
+            return met_fee
+    
+    def meter2mile(length):
+        if Verify.checkValue(length):
+            met_mile = length * 1609
+            return met_mile
+
+    def meter2inch(length):
+        if Verify.checkValue(length):
+            met_inc = length * 3.28084
+            return met_inc
+    
 
 class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
     pass
