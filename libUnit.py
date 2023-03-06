@@ -11,7 +11,7 @@ class Verify(abc.ABC):
     def checkValue(value):
         try:
             float(value)
-        except:
+        except ValueError:
             print('Invalid value. Numbers only.')
             return False
 
@@ -91,1143 +91,1215 @@ class Currency(abc.ABC):
 
     #DOLLAR
     def USD2BRL(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-BRL")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['USDBRL']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-BRL")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['USDBRL']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
     
     def USD2JPY(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-JPY")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['USDJPY']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-JPY")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['USDJPY']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def USD2GBP(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-GBP")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['USDGBP']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-GBP")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['USDGBP']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def USD2CHF(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-CHF")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['USDCHF']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-CHF")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['USDCHF']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def USD2CAD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-CAD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['USDCAD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-CAD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['USDCAD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def USD2AUD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-AUD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['USDAUD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-AUD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['USDAUD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def USD2CNY(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-CNY")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['USDCNY']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-CNY")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['USDCNY']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def USD2EUR(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-EUR")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['USDEUR']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/USD-EUR")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['USDEUR']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
     
     #EURO
     def EUR2BRL(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-BRL")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['EURBRL']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-BRL")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['EURBRL']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
         
     def EUR2USD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-USD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['EURUSD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-    
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-USD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['EURUSD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+        
     def EUR2JPY(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-JPY")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['EURJPY']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-JPY")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['EURJPY']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def EUR2GBP(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-GBP")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['EURGBP']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-GBP")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['EURGBP']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def EUR2CHF(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-CHF")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['EURCHF']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-CHF")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['EURCHF']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def EUR2CAD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-CAD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['EURCAD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-CAD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['EURCAD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def EUR2AUD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-AUD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['EURAUD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-AUD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['EURAUD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def EUR2CNY(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-CNY")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['EURCNY']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/EUR-CNY")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['EURCNY']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     #REAL
     def BRL2USD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-USD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['BRLUSD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-    
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-USD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['BRLUSD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+        
     def BRL2JPY(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-JPY")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['BRLJPY']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-JPY")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['BRLJPY']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def BRL2GBP(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-GBP")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['BRLGBP']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-GBP")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['BRLGBP']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def BRL2CHF(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-CHF")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['BRLCHF']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-CHF")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['BRLCHF']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def BRL2CAD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-CAD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['BRLCAD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-CAD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['BRLCAD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def BRL2AUD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-AUD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['BRLAUD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-AUD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['BRLAUD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def BRL2CNY(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-CNY")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['BRLCNY']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-   
-    def BRL2EUR(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-EUR")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['BRLEUR']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-CNY")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['BRLCNY']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
     
+    def BRL2EUR(amount):
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/BRL-EUR")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['BRLEUR']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+        
     #Iene Japônes
     def JPY2USD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['JPYUSD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-    
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['JPYUSD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+        
     def JPY2EUR(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-EUR")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['JPYEUR']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-EUR")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['JPYEUR']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def JPY2BRL(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-BRL")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['JPYBRL']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-        
-    def JPY2GBP(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
-                c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
-
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-BRL")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['JPYBRL']['bid'])*amount
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+            
+    def JPY2GBP(amount):
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
 
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def JPY2CHF(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def JPY2CAD(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CADUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CADUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def JPY2AUD(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
-                c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def JPY2CNY(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-    
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+        
     #Libra Esterlina
     def GBP2USD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['GBPUSD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-    
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['GBPUSD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+        
     def GBP2EUR(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-EUR")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['GBPEUR']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-EUR")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['GBPEUR']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def GBP2BRL(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-BRL")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['GBPBRL']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-        
-    def GBP2JPY(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['GBPUSD']['bid'])
-                c2 = float((json.loads(c2.content))['JPYUSD']['bid'])
-
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-BRL")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['GBPBRL']['bid'])*amount
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+            
+    def GBP2JPY(amount):
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['GBPUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['JPYUSD']['bid'])
 
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def GBP2CHF(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['GBPUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['GBPUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def GBP2CAD(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['GBPUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CADUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['GBPUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CADUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def GBP2AUD(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['GBPUSD']['bid'])
-                c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['GBPUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def GBP2CNY(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['GBPUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['GBPUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     #Franco Suiço
     def CHF2USD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['CHFUSD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-    
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['CHFUSD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+        
     def CHF2EUR(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-EUR")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['CHFEUR']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-EUR")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['CHFEUR']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def CHF2BRL(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-BRL")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['CHFBRL']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-        
-    def CHF2GBP(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CHFUSD']['bid'])
-                c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
-
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-BRL")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['CHFBRL']['bid'])*amount
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+            
+    def CHF2GBP(amount):
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CHFUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
 
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def CHF2JPY(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CHFUSD']['bid'])
-                c2 = float((json.loads(c2.content))['JPYUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CHFUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['JPYUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def CHF2CAD(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CHFUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CADUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CHFUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CADUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def CHF2AUD(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CHFUSD']['bid'])
-                c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CHFUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def CHF2CNY(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CHFUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CHFUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     #Dollar Canadense
     def CAD2USD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['CADUSD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-    
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['CADUSD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+        
     def CAD2EUR(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-EUR")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['CADEUR']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-EUR")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['CADEUR']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def CAD2BRL(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-BRL")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['CADBRL']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-        
-    def CAD2GBP(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CADUSD']['bid'])
-                c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
-
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-BRL")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['CADBRL']['bid'])*amount
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+            
+    def CAD2GBP(amount):
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CADUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
 
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"  
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"  
 
     def CAD2CHF(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CADUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CADUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def CAD2JPY(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CADUSD']['bid'])
-                c2 = float((json.loads(c2.content))['JPYUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CADUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['JPYUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def CAD2AUD(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CADUSD']['bid'])
-                c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CADUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def CAD2CNY(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CADUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CADUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     #Dollar Australiano
     def AUD2USD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['AUDUSD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-    
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['AUDUSD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+        
     def AUD2EUR(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-EUR")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['AUDEUR']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-EUR")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['AUDEUR']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def AUD2BRL(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-BRL")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['AUDBRL']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-        
-    def AUD2GBP(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['AUDUSD']['bid'])
-                c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
-
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-BRL")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['AUDBRL']['bid'])*amount
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+            
+    def AUD2GBP(amount):
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['AUDUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
 
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def AUD2CHF(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['AUDUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['AUDUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def AUD2CAD(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['AUDUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CADUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['AUDUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CADUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def AUD2JPY(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['AUDUSD']['bid'])
-                c2 = float((json.loads(c2.content))['JPYUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['AUDUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['JPYUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     def AUD2CNY(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['AUDUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['AUDUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR" 
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR" 
 
     #Yuan
     def CNY2USD(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['CNYUSD']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-    
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['CNYUSD']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+        
     def CNY2EUR(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-EUR")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['CNYEUR']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-EUR")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['CNYEUR']['bid'])*amount
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def CNY2BRL(amount):
-        try:    
-            coin = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-BRL")
-            if coin.status_code == 200:
-                coin = json.loads(coin.content)
-                coin = float(coin['CNYBRL']['bid'])*amount
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
-        
-    def CNY2GBP(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CNYUSD']['bid'])
-                c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
-
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+        if Verify.checkValue(amount):
+            try:    
+                coin = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-BRL")
+                if coin.status_code == 200:
+                    coin = json.loads(coin.content)
+                    coin = float(coin['CNYBRL']['bid'])*amount
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
+            
+    def CNY2GBP(amount):
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CNYUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
 
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"  
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
+                else:
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"  
 
     def CNY2CHF(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CNYUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CNYUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def CNY2CAD(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CNYUSD']['bid'])
-                c2 = float((json.loads(c2.content))['CADUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CNYUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['CADUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def CNY2AUD(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CNYUSD']['bid'])
-                c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CNYUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
 
     def CNY2JPY(amount):
-        try:    
-            c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
-            c2 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
-            if c1.status_code == 200 and c1.status_code == 200:
-                c1 = float((json.loads(c1.content))['CNYUSD']['bid'])
-                c2 = float((json.loads(c2.content))['JPYUSD']['bid'])
+        if Verify.checkValue(amount):
+            try:    
+                c1 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
+                c2 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
+                if c1.status_code == 200 and c1.status_code == 200:
+                    c1 = float((json.loads(c1.content))['CNYUSD']['bid'])
+                    c2 = float((json.loads(c2.content))['JPYUSD']['bid'])
 
-                if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
-                    coin = (c1/c2)*amount
-                elif c1 < 1 and c2 > 1:
-                    coin = (c1*(1/c2))*amount
+                    if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
+                        coin = (c1/c2)*amount
+                    elif c1 < 1 and c2 > 1:
+                        coin = (c1*(1/c2))*amount
+                    else:
+                        coin = ((1/c1)*c2)*amount
+
+                    return f'{coin:.2f}'
                 else:
-                    coin = ((1/c1)*c2)*amount
-
-                return f'{coin:.2f}'
-            else:
-                return "Connection ERROR"
-        except:
-            return "Conversion ERROR"
+                    return "Connection ERROR"
+            except:
+                return "Conversion ERROR"
