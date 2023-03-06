@@ -11,6 +11,7 @@ class Verify(abc.ABC):
     def checkValue(value):
         try:
             float(value)
+            return True
         except ValueError:
             print('Invalid value. Numbers only.')
             return False
@@ -411,12 +412,14 @@ class Currency(abc.ABC):
                 coin = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
                 if coin.status_code == 200:
                     coin = json.loads(coin.content)
-                    coin = float(coin['JPYUSD']['bid'])*amount
-                    return f'{coin:.2f}'
+                    coin = float(coin['JPYUSD']['bid'])*amount/100
+                    return f'{coin:.4f}'
                 else:
                     return "Connection ERROR"
             except:
                 return "Conversion ERROR"
+        else:
+            return "Bah"
         
     def JPY2EUR(amount):
         if Verify.checkValue(amount):
@@ -424,8 +427,8 @@ class Currency(abc.ABC):
                 coin = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-EUR")
                 if coin.status_code == 200:
                     coin = json.loads(coin.content)
-                    coin = float(coin['JPYEUR']['bid'])*amount
-                    return f'{coin:.2f}'
+                    coin = float(coin['JPYEUR']['bid'])*amount/100
+                    return f'{coin:.4f}'
                 else:
                     return "Connection ERROR"
             except:
@@ -437,8 +440,8 @@ class Currency(abc.ABC):
                 coin = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-BRL")
                 if coin.status_code == 200:
                     coin = json.loads(coin.content)
-                    coin = float(coin['JPYBRL']['bid'])*amount
-                    return f'{coin:.2f}'
+                    coin = float(coin['JPYBRL']['bid'])*amount/100
+                    return f'{coin:.4f}'
                 else:
                     return "Connection ERROR"
             except:
@@ -450,7 +453,7 @@ class Currency(abc.ABC):
                 c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
                 c2 = requests.get("http://economia.awesomeapi.com.br/json/last/GBP-USD")
                 if c1.status_code == 200 and c1.status_code == 200:
-                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
+                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])/100
                     c2 = float((json.loads(c2.content))['GBPUSD']['bid'])
 
                     if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
@@ -460,7 +463,7 @@ class Currency(abc.ABC):
                     else:
                         coin = ((1/c1)*c2)*amount
 
-                    return f'{coin:.2f}'
+                    return f'{coin:.4f}'
                 else:
                     return "Connection ERROR"
             except:
@@ -472,7 +475,7 @@ class Currency(abc.ABC):
                 c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
                 c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CHF-USD")
                 if c1.status_code == 200 and c1.status_code == 200:
-                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
+                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])/100
                     c2 = float((json.loads(c2.content))['CHFUSD']['bid'])
 
                     if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
@@ -482,7 +485,7 @@ class Currency(abc.ABC):
                     else:
                         coin = ((1/c1)*c2)*amount
 
-                    return f'{coin:.2f}'
+                    return f'{coin:.4f}'
                 else:
                     return "Connection ERROR"
             except:
@@ -494,7 +497,7 @@ class Currency(abc.ABC):
                 c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
                 c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CAD-USD")
                 if c1.status_code == 200 and c1.status_code == 200:
-                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
+                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])/100
                     c2 = float((json.loads(c2.content))['CADUSD']['bid'])
 
                     if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
@@ -504,7 +507,7 @@ class Currency(abc.ABC):
                     else:
                         coin = ((1/c1)*c2)*amount
 
-                    return f'{coin:.2f}'
+                    return f'{coin:.4f}'
                 else:
                     return "Connection ERROR"
             except:
@@ -516,7 +519,7 @@ class Currency(abc.ABC):
                 c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
                 c2 = requests.get("http://economia.awesomeapi.com.br/json/last/AUD-USD")
                 if c1.status_code == 200 and c1.status_code == 200:
-                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
+                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])/100
                     c2 = float((json.loads(c2.content))['AUDUSD']['bid'])
 
                     if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
@@ -526,7 +529,7 @@ class Currency(abc.ABC):
                     else:
                         coin = ((1/c1)*c2)*amount
 
-                    return f'{coin:.2f}'
+                    return f'{coin:.4f}'
                 else:
                     return "Connection ERROR"
             except:
@@ -538,7 +541,7 @@ class Currency(abc.ABC):
                 c1 = requests.get("http://economia.awesomeapi.com.br/json/last/JPY-USD")
                 c2 = requests.get("http://economia.awesomeapi.com.br/json/last/CNY-USD")
                 if c1.status_code == 200 and c1.status_code == 200:
-                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])
+                    c1 = float((json.loads(c1.content))['JPYUSD']['bid'])/100
                     c2 = float((json.loads(c2.content))['CNYUSD']['bid'])
 
                     if c1 > 1 and c2 > 1 or c1 < 1 and c2 < 1:
@@ -548,7 +551,7 @@ class Currency(abc.ABC):
                     else:
                         coin = ((1/c1)*c2)*amount
 
-                    return f'{coin:.2f}'
+                    return f'{coin:.4f}'
                 else:
                     return "Connection ERROR"
             except:
