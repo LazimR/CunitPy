@@ -55,7 +55,8 @@ class Temperature(abc.ABC):
 
 class Length(abc.ABC):
     '''
-    This class represents the lenght measurement units: nanometer, millimeter, centimeter, meter, kilometer, yard, feet and mile.
+    This class represents the lenght measurement units: nanometer, micrometer
+    millimeter, centimeter, meter, kilometer, yard, feet, inch and mile.
     It contains conversion methods between theses units and returns float number
     as the calculations results.
     '''
