@@ -423,7 +423,54 @@ class Length(abc.ABC):
 
 
 class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
-    pass
+    
+    def microgram2milligram(mass):
+        if Verify.checkValue(mass):
+            return mass / 1000    
+    
+    def microgram2gram(mass):
+        if Verify.checkValue(mass):
+            return mass / 10**6
+    
+    def microgram2kilogram(mass):
+        if Verify.checkValue(mass):
+            return mass / 10**9
+
+    def microgram2ton(mass):
+        if Verify.checkValue(mass):
+            return mass / 10**12
+
+    def microgram2ounce(mass):
+        if Verify.checkValue(mass):
+            return mass / 2.835*10**10
+    
+    def microgram2pound(mass):
+        if Verify.checkValue(mass):
+            return mass / 1000
+    
+    def milligram2microgram(mass):
+        if Verify.checkValue(mass):
+            return mass * 1000
+    
+    def milligram2gram(mass):
+        if Verify.checkValue(mass):
+            return mass / 1000
+    
+    def milligram2kilogram(mass):
+        if Verify.checkValue(mass):
+            return mass / 10**6
+
+    def milligram2ton(mass):
+        if Verify.checkValue(mass):
+            return mass / 10**9
+
+    def milligram2ounce(mass):
+        if Verify.checkValue(mass):
+            return mass / 28350
+
+    def milligram2pound(mass):
+        if Verify.checkValue(mass):
+            return mass / 453600
 
 class Time(abc.ABC):
 
