@@ -92,7 +92,6 @@ class Length(abc.ABC):
         if Verify.checkValue(length):
             return length / 1.609*10**12
             
-    
     # Micrometer
     def micrometer2nanometer(length):
         if Verify.checkValue(length):
@@ -426,43 +425,164 @@ class Length(abc.ABC):
 class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
     pass
 
-class Time(abc.ABC): # seconds, minutes, hours, days...
+class Time(abc.ABC):
+
+    # Nanosecond
+    def nanosecond2microsecond(time):
+        if Verify.checkValue(time):    
+            return time / 1000
+
+    def nanosecond2millisecond(time):
+        if Verify.checkValue(time):    
+            return time / 10**6
+
+    def nanosecond2second(time):
+        if Verify.checkValue(time):    
+            return time / 10**9
+
+    def nanosecond2minuto(time):
+        if Verify.checkValue(time):    
+            return time / 6*10**10
+    
+    def nanosecond2hour(time):
+        if Verify.checkValue(time):    
+            return time / 3.6*10**12
+
+    def nanosecond2day(time):
+        if Verify.checkValue(time):    
+            return time / 8.64*10**13
+
+    # Microsecond
+    def microsecond2nanosecond(time):
+        if Verify.checkValue(time):    
+            return time * 1000
+
+    def microsecond2millisecond(time):
+        if Verify.checkValue(time):    
+            return time / 1000
+
+    def microsecond2second(time):
+        if Verify.checkValue(time):    
+            return time / 10**6
+    
+    def microsecond2minuto(time):
+        if Verify.checkValue(time):    
+            return time / 6*10**7
+    
+    
+    def microsecond2hour(time):
+        if Verify.checkValue(time):    
+            return time / 3.6*10**9
+    
+    
+    def microsecond2day(time):
+        if Verify.checkValue(time):    
+            return time / 8.64*10**10
+
+    # Millisecond
+    def microsecond2nanosecond(time):
+        if Verify.checkValue(time):    
+            return time * 10**6
+
+    def millisecond2second(time):
+        if Verify.checkValue(time):    
+            return time / 1000
+    
+    def millisecond2minute(time):
+        if Verify.checkValue(time):    
+            return time / 60000
+    
+    def millisecond2hour(time):
+        if Verify.checkValue(time):    
+            return time / 3.6 * 10**6
+    
+    def millisecond2day(time):
+        if Verify.checkValue(time):    
+            return time / 8.64*10**7
+
+    # Second
+    def second2nanosecond(time):
+        if Verify.checkValue(time):    
+            return time * 10**9
+
+    def second2millisecond(time):
+        if Verify.checkValue(time):    
+            return time * 1000
 
     def second2minute(time):
-        return time/60
+        if Verify.checkValue(time):    
+            return time/60
     
     def second2hour(time):
-        return time/3600
+        if Verify.checkValue(time):
+            return time/3600
     
     def second2day(time):
-        return time/86400
+        if Verify.checkValue(time):
+            return time/86400
+    
+    # Minute
+    def minute2nanosecond(time):
+        if Verify.checkValue(time):    
+            return time * 6*10**10
+
+    def minute2millisecond(time):
+        if Verify.checkValue(time):    
+            return time * 60000
 
     def minute2second(time):
-        return time*60
+        if Verify.checkValue(time):
+            return time*60
 
     def minute2hour(time):
-        return time/60
+        if Verify.checkValue(time):
+            return time/60
 
     def minute2day(time):
-        return time/1440
+        if Verify.checkValue(time):
+            return time/1440
+    
+    # Hour
+    def hour2nanosecond(time):
+        if Verify.checkValue(time):    
+            return time * 3.6*10**12
+
+    def hour2millisecond(time):
+        if Verify.checkValue(time):    
+            return time * 3.6*10**6
 
     def hour2second(time):
-        return time*3600
+        if Verify.checkValue(time):
+            return time*3600
     
     def hour2minute(time):
-        return time * 60
+        if Verify.checkValue(time):
+            return time * 60
     
     def hour2day(time):
-        return time/24
+        if Verify.checkValue(time):
+            return time/24
     
+    # Day
+    def microsecond2millisecond(time):
+        if Verify.checkValue(time):    
+            return time * 8.64*10*13
+
+    def day2millisecond(time):
+        if Verify.checkValue(time):    
+            return time / 8.64*10**7
+
     def day2second(time):
-        return time*86400
+        if Verify.checkValue(time):
+            return time*86400
     
     def day2minute(time):
-        return time*1440
+        if Verify.checkValue(time):
+            return time*1440
     
     def day2hour(time):
-        return time*24
+        if Verify.checkValue(time):
+            return time*24
 
 class Currency(abc.ABC):
     #Padrão de converção de moedas sem registro na API
