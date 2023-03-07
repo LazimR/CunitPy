@@ -23,7 +23,7 @@ class Temperature(abc.ABC):
     as the calculations results.
     '''
     
-    def celsius2fahr(temp):
+    def celsius2fahrenheit(temp):
         if Verify.checkValue(temp):
             return temp * 9/5 + 32
 
@@ -31,11 +31,11 @@ class Temperature(abc.ABC):
         if Verify.checkValue(temp):
             return temp + 273.15 
     
-    def fahr2celsius(temp):
+    def fahrenheit2celsius(temp):
         if Verify.checkValue(temp):
             return (temp - 32) * 5/9
     
-    def fahr2kelvin(temp):
+    def fahrenheit2kelvin(temp):
         if Verify.checkValue(temp):
             return (temp - 32) * 5/9 + 273.15
 
@@ -43,7 +43,7 @@ class Temperature(abc.ABC):
         if Verify.checkValue(temp):
             return temp - 273.15
 
-    def kelvin2fahr(temp):
+    def kelvin2fahrenheit(temp):
         if Verify.checkValue(temp):
             return (temp - 273.15) * 9/5 + 32
 
@@ -350,6 +350,77 @@ class Length(abc.ABC):
         if Verify.checkValue(length):
             return length / 5280
 
+    def yard2nanometer(length):
+        if Verify.checkValue(length):
+            return length * 9.144*10**8
+    
+    def yard2micrometer(length):
+        if Verify.checkValue(length):
+            return length * 914400
+    
+    def yard2millimeter(length):
+        if Verify.checkValue(length):
+            return length * 914.4
+    
+    def yard2centimeter(length):
+        if Verify.checkValue(length):
+            return length * 91.44
+
+    def yard2meter(length):
+        if Verify.checkValue(length):
+            return length / 1.094
+        
+    def yard2kilometer(length):
+        if Verify.checkValue(length):
+            return length / 1094
+
+    def yard2inch(length):
+        if Verify.checkValue(length):
+            return length * 36
+    
+    def yard2feet(length):
+        if Verify.checkValue(length):
+            return length * 3
+    
+    def yard2mile(length):
+        if Verify.checkValue(length):
+            return length / 1760
+
+    def mile2nanometer(length):
+        if Verify.checkValue(length):
+            return length * 1.609*10**12
+
+    def mile2micrometer(length):
+        if Verify.checkValue(length):
+            return length * 1.609*10**9
+
+    def mile2millimeter(length):
+        if Verify.checkValue(length):
+            return length * 1.609*10**6
+
+    def mile2centimeter(length):
+        if Verify.checkValue(length):
+            return length * 160900
+
+    def mile2meter(length):
+        if Verify.checkValue(length):
+            return length * 1609
+
+    def mile2kilometer(length):
+        if Verify.checkValue(length):
+            return length * 1.609
+
+    def mile2inch(length):
+        if Verify.checkValue(length):
+            return length * 63660
+    
+    def mile2feet(length):
+        if Verify.checkValue(length):
+            return length * 5280
+    
+    def mile2yard(length):
+        if Verify.checkValue(length):
+            return length * 1760
 
 
 class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...

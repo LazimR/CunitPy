@@ -2,7 +2,7 @@ from libUnit import Currency, Temperature
 print(Currency.JPY2USD(137))
 print(Currency.JPY2GBP(130))
 
-print(Temperature.fahr2celsius(102))
+print(Temperature.fahrenheit2celsius(102))
 
 '''
 print(Currency.USD2BRL(1))
