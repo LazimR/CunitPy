@@ -25,33 +25,27 @@ class Temperature(abc.ABC):
     
     def celsius2fahr(temp):
         if Verify.checkValue(temp):
-            cel_fah = temp * 9/5 + 32
-            return cel_fah
+            return temp * 9/5 + 32
 
     def celsius2kelvin(temp):
         if Verify.checkValue(temp):
-            cel_kel = temp + 273.15
-            return cel_kel 
+            return temp + 273.15 
     
     def fahr2celsius(temp):
         if Verify.checkValue(temp):
-            fah_cel = (temp - 32) * 5/9
-            return fah_cel
+            return (temp - 32) * 5/9
     
     def fahr2kelvin(temp):
         if Verify.checkValue(temp):
-            fah_kel = (temp - 32) * 5/9 + 273.15
-            return fah_kel
+            return (temp - 32) * 5/9 + 273.15
 
     def kelvin2celsius(temp):
         if Verify.checkValue(temp):
-            kel_cel = temp - 273.15
-            return kel_cel
+            return temp - 273.15
 
     def kelvin2fahr(temp):
         if Verify.checkValue(temp):
-            kel_fah = (temp - 273.15) * 9/5 + 32
-            return kel_fah
+            return (temp - 273.15) * 9/5 + 32
 
 class Length(abc.ABC):
     '''
@@ -60,144 +54,195 @@ class Length(abc.ABC):
     It contains conversion methods between theses units and returns float number
     as the calculations results.
     '''
+
     # Nanometer
     def nanometer2micrometer(length):
         if Verify.checkValue(length):
-            nan_mic = length / 1000
-            return nan_mic
-
+            return length / 1000
+            
     def nanometer2millimeter(length):
         if Verify.checkValue(length):
-            nan_mil = length / 10**6
-            return nan_mil
-
+            return length / 10**6
+            
     def nanometer2centimeter(length):
         if Verify.checkValue(length):
-            nan_cen = length / 10**7
-            return nan_cen
-
+            return length / 10**7
+            
     def nanometer2meter(length):
         if Verify.checkValue(length):
-            nan_met = length / 10**9
-            return nan_met
-
+            return length / 10**9
+            
     def nanometer2kilometer(length):
         if Verify.checkValue(length):
-            nan_kil = length / 10**12
-            return nan_kil
-    
+            return length / 10**12
+                
     def nanometer2inch(length):
         if Verify.checkValue(length):
-            nan_inc = length / 2.54*10**7
-            return nan_inc
-
+            return length / 2.54*10**7
+            
     def nanometer2feet(length):
         if Verify.checkValue(length):
-            nan_fee = length / 3.048*10**8
-            return nan_fee
-
+            return length / 3.048*10**8
+            
     def nanometer2yard(length):
         if Verify.checkValue(length):
-            nan_yar = length / 9.144*10**8
-            return nan_yar
-    
+            return length / 9.144*10**8
+                
     def nanometer2mile(length):
         if Verify.checkValue(length):
-            nan_mile = length / 1.609*10**12
-            return nan_mile
+            return length / 1.609*10**12
+            
     
     # Micrometer
     def micrometer2nanometer(length):
         if Verify.checkValue(length):
-            mic_nan = length * 1000
-            return mic_nan
-    
+            return length * 1000
+                
     def micrometer2millimeter(length):
         if Verify.checkValue(length):
-            mic_mil = length / 1000
-            return mic_mil
-
+            return length / 1000
+            
     def micrometer2centimeter(length):
         if Verify.checkValue(length):
-            mic_cen = length / 10000
-            return mic_cen
-    
+            return length / 10000
+                
     def micrometer2meter(length):
         if Verify.checkValue(length):
-            mic_met = length / 10**6
-            return mic_met
-
+            return length / 10**6
+            
     def micrometer2kilometer(length):
         if Verify.checkValue(length):
-            mic_kil = length / 10**9
-            return mic_kil
-
+            return length / 10**9
+            
     def micrometer2inch(length):
         if Verify.checkValue(length):
-            mic_inc = length / 25400
-            return mic_inc
-
+            return length / 25400
+            
     def micrometer2feet(length):
         if Verify.checkValue(length):
-            mic_fee = length / 304800
-            return mic_fee
-    
+            return length / 304800
+                
     def micrometer2yard(length):
         if Verify.checkValue(length):
-            mic_yar = length / 914400
-            return mic_yar
-
+            return length / 914400
+            
     def micrometer2mile(length):
         if Verify.checkValue(length):
-            mic_mile = length / 1.609*10**9
-            return mic_mile
+            return length / 1.609*10**9
+            
+    # Millimeter
+    def millimeter2nanometer(length):
+        if Verify.checkValue(length):
+            return length * 10**6
+
+    def millimeter2micrometer(length):
+        if Verify.checkValue(length):
+            return length * 1000
+
+    def millimeter2centimeter(length):
+        if Verify.checkValue(length):
+            return length / 10
+    
+    def millimeter2meter(length):
+        if Verify.checkValue(length):
+            return length / 1000
+
+    def millimeter2kilometer(length):
+        if Verify.checkValue(length):
+            return length / 10**6
+
+    def millimeter2inch(length):
+        if Verify.checkValue(length):
+            return length / 25.4
+
+    def millimeter2feet(length):
+        if Verify.checkValue(length):
+            return length / 304.8
+
+    def millimeter2yard(length):
+        if Verify.checkValue(length):
+            return length / 914.4
+
+    def millimeter2mile(length):
+        if Verify.checkValue(length):
+            return length / 1609*10**6
+
+    # Centimeter
+    def centimeter2nanometer(length):
+        if Verify.checkValue(length):
+            return length * 10**7
+    
+    def centimeter2micrometer(length):
+        if Verify.checkValue(length):
+            return length * 10000
+
+    def centimeter2millimeter(length):
+        if Verify.checkValue(length):
+            return length * 10
+
+    def centimeter2meter(length):
+        if Verify.checkValue(length):
+            return length / 100
+    
+    def centimeter2kilometer(length):
+        if Verify.checkValue(length):
+            return length / 100000
+
+    def centimeter2inch(length):
+        if Verify.checkValue(length):
+            return length / 2.54
+    
+    def centimeter2feet(length):
+        if Verify.checkValue(length):
+            return length / 30.48
+
+    def centimeter2yard(length):
+        if Verify.checkValue(length):
+            return length / 91.44
+    
+    def centimeter2mile(length):
+        if Verify.checkValue(length):
+            return length / 160900
 
     # Meter
     def meter2nanometer(length):
         if Verify.checkValue(length):
-            met_nan = length * 0.000000001
-            return met_nan
-    
+            return length * 0.000000001
+                
     def meter2micrometer(length):
         if Verify.checkValue(length):
-            met_mic = length * 0.000001
-            return met_mic
-    
+            return length * 0.000001
+                
     def meter2millimeter(length):
         if Verify.checkValue(length):
-            met_mil = length * 1000
-            return met_mil
-
+            return length * 1000
+            
     def meter2centimeter(length):
         if Verify.checkValue(length):
-            met_cen = length * 100
-            return met_cen
-
+            return length * 100
+            
     def meter2kilometer(length):
         if Verify.checkValue(length):
-            met_kil = length / 1000
-            return met_kil
-    
+            return length / 1000
+                
     def meter2inch(length):
         if Verify.checkValue(length):
-            met_inc = length * 3.28084
-            return met_inc
-    
+            return length * 3.28084
+                
     def meter2feet(length):
         if Verify.checkValue(length):
-            met_fee = length * 3.28084
-            return met_fee
-
+            return length * 3.28084
+            
     def meter2yard(length):
         if Verify.checkValue(length):
-            met_yar = length * 109361
-            return met_yar
-    
+            return length * 109361
+                
     def meter2mile(length):
         if Verify.checkValue(length):
-            met_mile = length * 1609
-            return met_mile
-
+            return length * 1609
+            
+    # Kilometer
+    
 
 class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
     pass
