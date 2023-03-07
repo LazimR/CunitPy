@@ -239,29 +239,159 @@ class Length(abc.ABC):
                 
     def meter2mile(length):
         if Verify.checkValue(length):
-            return length * 1609
+            return length / 1609
             
     # Kilometer
+    def kilometer2nanometer(length):
+        if Verify.checkValue(length):
+            return length * 10**12
     
+    def kilometer2micrometer(length):
+        if Verify.checkValue(length):
+            return length * 10**9
+    
+    def kilometer2millimeter(length):
+        if Verify.checkValue(length):
+            return length * 10**6
+    
+    def kilometer2centimeter(length):
+        if Verify.checkValue(length):
+            return length * 100000
+    
+    def kilometer2meter(length):
+        if Verify.checkValue(length):
+            return length * 1000
+    
+    def kilometer2inch(length):
+        if Verify.checkValue(length):
+            return length * 39370
+    
+    def kilometer2feet(length):
+        if Verify.checkValue(length):
+            return length * 3281
+
+    def kilometer2yard(length):
+        if Verify.checkValue(length):
+            return length * 1094
+    
+    def kilometer2mile(length):
+        if Verify.checkValue(length):
+            return length / 1609
+
+    def inch2nanometer(length):
+        if Verify.checkValue(length):
+            return length * 2.54*10**7
+    
+    def inch2micrometer(length):
+        if Verify.checkValue(length):
+            return length * 25400
+
+    def inch2millimeter(length):
+        if Verify.checkValue(length):
+            return length * 25.4
+
+    def inch2centimeter(length):
+        if Verify.checkValue(length):
+            return length * 2.5
+
+    def inch2meter(length):
+        if Verify.checkValue(length):
+            return length / 39.37
+
+    def inch2kilometer(length):
+        if Verify.checkValue(length):
+            return length / 39370
+
+    def inch2feet(length):
+        if Verify.checkValue(length):
+            return length / 12
+
+    def inch2yard(length):
+        if Verify.checkValue(length):
+            return length / 36   
+
+    def inch2mile(length):
+        if Verify.checkValue(length):
+            return length / 63360
+
+    def feet2nanometer(length):
+        if Verify.checkValue(length):
+            return length * 3.048*10**8
+
+    def feet2micrometro(length):
+        if Verify.checkValue(length):
+            return length * 304800
+    
+    def feet2millimeter(length):
+        if Verify.checkValue(length):
+            return length * 304.8
+
+    def feet2centimeter(length):
+        if Verify.checkValue(length):
+            return length * 30.48
+
+    def feet2meter(length):
+        if Verify.checkValue(length):
+            return length * 3.281
+    
+    def feet2kilometer(length):
+        if Verify.checkValue(length):
+            return length * 3281 
+
+    def feet2inch(length):
+        if Verify.checkValue(length):
+            return length * 12
+
+    def feet2yard(length):
+        if Verify.checkValue(length):
+            return length / 3
+    
+    def feet2mile(length):
+        if Verify.checkValue(length):
+            return length / 5280
+
+
 
 class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
     pass
 
-class Time(abc.ABC): # seconds, minutes, hours...
-    def sec2min(time):
+class Time(abc.ABC): # seconds, minutes, hours, days...
+
+    def second2minute(time):
         return time/60
     
-    def sec2hr(time):
+    def second2hour(time):
         return time/3600
     
-    def min2sec(time):
+    def second2day(time):
+        return time/86400
+
+    def minute2second(time):
         return time*60
 
-    def min2hr(time):
+    def minute2hour(time):
         return time/60
 
-    def hr2sec(time):
+    def minute2day(time):
+        return time/1440
+
+    def hour2second(time):
         return time*3600
+    
+    def hour2minute(time):
+        return time * 60
+    
+    def hour2day(time):
+        return time/24
+    
+    def day2second(time):
+        return time*86400
+    
+    def day2minute(time):
+        return time*1440
+    
+    def day2hour(time):
+        return time*24
 
 class Currency(abc.ABC):
     #Padrão de converção de moedas sem registro na API
