@@ -63,49 +63,95 @@ class Length(abc.ABC):
     # Nanometer
     def nanometer2micrometer(length):
         if Verify.checkValue(length):
-            nan_mic = length * 1000
+            nan_mic = length / 1000
             return nan_mic
 
     def nanometer2millimeter(length):
         if Verify.checkValue(length):
-            nan_mil = length * 10**6
+            nan_mil = length / 10**6
             return nan_mil
 
     def nanometer2centimeter(length):
         if Verify.checkValue(length):
-            nan_cen = length * 10**7
+            nan_cen = length / 10**7
             return nan_cen
 
     def nanometer2meter(length):
         if Verify.checkValue(length):
-            nan_met = length * 10**9
+            nan_met = length / 10**9
             return nan_met
 
     def nanometer2kilometer(length):
         if Verify.checkValue(length):
-            nan_kil = length * 10**12
+            nan_kil = length / 10**12
             return nan_kil
     
     def nanometer2inch(length):
         if Verify.checkValue(length):
-            nan_inc = length * 2.54*10**7
+            nan_inc = length / 2.54*10**7
             return nan_inc
+
+    def nanometer2feet(length):
+        if Verify.checkValue(length):
+            nan_fee = length / 3.048*10**8
+            return nan_fee
 
     def nanometer2yard(length):
         if Verify.checkValue(length):
-            nan_yar = length * 9.144*10**8
+            nan_yar = length / 9.144*10**8
             return nan_yar
     
-    def nanometer2feet(length):
-        if Verify.checkValue(length):
-            nan_fee = length * 3.048*10**8
-            return nan_fee
-
     def nanometer2mile(length):
         if Verify.checkValue(length):
-            nan_mil = length * 1.609*10**12
-            return nan_mil
+            nan_mile = length / 1.609*10**12
+            return nan_mile
     
+    # Micrometer
+    def micrometer2nanometer(length):
+        if Verify.checkValue(length):
+            mic_nan = length * 1000
+            return mic_nan
+    
+    def micrometer2millimeter(length):
+        if Verify.checkValue(length):
+            mic_mil = length / 1000
+            return mic_mil
+
+    def micrometer2centimeter(length):
+        if Verify.checkValue(length):
+            mic_cen = length / 10000
+            return mic_cen
+    
+    def micrometer2meter(length):
+        if Verify.checkValue(length):
+            mic_met = length / 10**6
+            return mic_met
+
+    def micrometer2kilometer(length):
+        if Verify.checkValue(length):
+            mic_kil = length / 10**9
+            return mic_kil
+
+    def micrometer2inch(length):
+        if Verify.checkValue(length):
+            mic_inc = length / 25400
+            return mic_inc
+
+    def micrometer2feet(length):
+        if Verify.checkValue(length):
+            mic_fee = length / 304800
+            return mic_fee
+    
+    def micrometer2yard(length):
+        if Verify.checkValue(length):
+            mic_yar = length / 914400
+            return mic_yar
+
+    def micrometer2mile(length):
+        if Verify.checkValue(length):
+            mic_mile = length / 1.609*10**9
+            return mic_mile
+
     # Meter
     def meter2nanometer(length):
         if Verify.checkValue(length):
@@ -136,24 +182,22 @@ class Length(abc.ABC):
         if Verify.checkValue(length):
             met_inc = length * 3.28084
             return met_inc
+    
+    def meter2feet(length):
+        if Verify.checkValue(length):
+            met_fee = length * 3.28084
+            return met_fee
 
     def meter2yard(length):
         if Verify.checkValue(length):
             met_yar = length * 109361
             return met_yar
-
-    def meter2feet(length):
-        if Verify.checkValue(length):
-            met_fee = length * 3.28084
-            return met_fee
     
     def meter2mile(length):
         if Verify.checkValue(length):
             met_mile = length * 1609
             return met_mile
 
-
-    
 
 class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
     pass
