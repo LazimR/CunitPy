@@ -22,7 +22,8 @@ class Temperature(abc.ABC):
     It contains conversion methods between theses units and returns float number
     as the calculations results.
     '''
-    
+
+    # Celsius
     def celsius2fahrenheit(temp):
         if Verify.checkValue(temp):
             return temp * 9/5 + 32
@@ -31,6 +32,7 @@ class Temperature(abc.ABC):
         if Verify.checkValue(temp):
             return temp + 273.15 
     
+    # Fahrenheit
     def fahrenheit2celsius(temp):
         if Verify.checkValue(temp):
             return (temp - 32) * 5/9
@@ -39,6 +41,7 @@ class Temperature(abc.ABC):
         if Verify.checkValue(temp):
             return (temp - 32) * 5/9 + 273.15
 
+    # Kelvin
     def kelvin2celsius(temp):
         if Verify.checkValue(temp):
             return temp - 273.15
@@ -427,7 +430,13 @@ class Length(abc.ABC):
 
 
 class Mass(abc.ABC):
-    
+    '''
+    This class represents the mass measurement units: microgram, milligram, gram,
+    kilogram, ton, ounce and pound.
+    It contains conversion methods between theses units and returns float number
+    as the calculations results.
+    '''
+
     # Microgram
     def microgram2milligram(mass):
         if Verify.checkValue(mass):
@@ -608,6 +617,12 @@ class Mass(abc.ABC):
             return mass * 16
 
 class Time(abc.ABC):
+    '''
+    This class represents the time measurement units: nanosecond, microsecond
+    second, minute, hour and day.
+    It contains conversion methods between theses units and returns float number
+    as the calculations results.
+    '''
 
     # Nanosecond
     def nanosecond2microsecond(time):
@@ -651,11 +666,9 @@ class Time(abc.ABC):
         if Verify.checkValue(time):    
             return time / 6*10**7
     
-    
     def microsecond2hour(time):
         if Verify.checkValue(time):    
             return time / 3.6*10**9
-    
     
     def microsecond2day(time):
         if Verify.checkValue(time):    
@@ -767,11 +780,17 @@ class Time(abc.ABC):
             return time*24
 
 class Currency(abc.ABC):
-    #Padrão de converção de moedas sem registro na API
-    #1 libra = (1/1.20) dólar
-    #1 dólar = 0.0074 iene
-    #1 libra = ((1/1.20) * 0.0074) iene
-    #1 libra = 0.0061666667 iene (aproximando para 7 casas decimais)
+    '''
+    This class represents the currency in different regions of the world.
+    It contains conversion methods between theses currencies and returns float number
+    as the calculations results and the data is collect by the 'requests' API.
+    '''
+
+    # Padrão de conversão de moedas sem registro na API
+    # 1 libra = (1/1.20) dólar
+    # 1 dólar = 0.0074 iene
+    # 1 libra = ((1/1.20) * 0.0074) iene
+    # 1 libra = 0.0061666667 iene (aproximando para 7 casas decimais)
     
     """
     Avaible coins:
@@ -786,7 +805,7 @@ class Currency(abc.ABC):
     Yuan (CNY)
     """
 
-    #DOLLAR
+    # Dollar
     def USD2BRL(amount):
         if Verify.checkValue(amount):
             try:    
@@ -891,7 +910,7 @@ class Currency(abc.ABC):
             except:
                 return "Conversion ERROR"
     
-    #EURO
+    # Euro
     def EUR2BRL(amount):
         if Verify.checkValue(amount):
             try:    
@@ -996,7 +1015,7 @@ class Currency(abc.ABC):
             except:
                 return "Conversion ERROR"
 
-    #REAL
+    # Real
     def BRL2USD(amount):
         if Verify.checkValue(amount):
             try:    
@@ -1101,7 +1120,7 @@ class Currency(abc.ABC):
             except:
                 return "Conversion ERROR"
         
-    #Iene Japônes
+    # Japanese Iene
     def JPY2USD(amount):
         if Verify.checkValue(amount):
             try:    
@@ -1253,7 +1272,7 @@ class Currency(abc.ABC):
             except:
                 return "Conversion ERROR"
         
-    #Libra Esterlina
+    # Libra Esterlina
     def GBP2USD(amount):
         if Verify.checkValue(amount):
             try:    
@@ -1403,7 +1422,7 @@ class Currency(abc.ABC):
             except:
                 return "Conversion ERROR"
 
-    #Franco Suiço
+    # Franco Suiço
     def CHF2USD(amount):
         if Verify.checkValue(amount):
             try:    
@@ -1553,7 +1572,7 @@ class Currency(abc.ABC):
             except:
                 return "Conversion ERROR" 
 
-    #Dollar Canadense
+    # Dollar Canadense
     def CAD2USD(amount):
         if Verify.checkValue(amount):
             try:    
@@ -1703,7 +1722,7 @@ class Currency(abc.ABC):
             except:
                 return "Conversion ERROR"
 
-    #Dollar Australiano
+    # Dollar Australiano
     def AUD2USD(amount):
         if Verify.checkValue(amount):
             try:    
@@ -1853,7 +1872,7 @@ class Currency(abc.ABC):
             except:
                 return "Conversion ERROR" 
 
-    #Yuan
+    # Yuan
     def CNY2USD(amount):
         if Verify.checkValue(amount):
             try:    
