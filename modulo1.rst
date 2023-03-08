@@ -1,4 +1,0 @@
-Converter
-==========
-.. automodule:: libUnit
-    :members: 

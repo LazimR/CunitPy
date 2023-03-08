@@ -3,11 +3,11 @@ import requests
 import json
 
 class Verify(abc.ABC):
-    '''
+    """
     This class is a value verifier.
     It contains a method which verifies the variable type of the parameter
     and is called by all conversion methods from measurement units classes.
-    '''
+    """
     def checkValue(value):
         try:
             float(value)
