@@ -6,3 +6,7 @@ src/cunitPy.egg-info/PKG-INFO
 src/cunitPy.egg-info/SOURCES.txt
 src/cunitPy.egg-info/dependency_links.txt
 src/cunitPy.egg-info/top_level.txt
+src/cunitpy.egg-info/PKG-INFO
+src/cunitpy.egg-info/SOURCES.txt
+src/cunitpy.egg-info/dependency_links.txt
+src/cunitpy.egg-info/top_level.txt
