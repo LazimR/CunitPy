@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: cunitpy
-Version: 0.0.1
+Version: 0.0.4
 Summary: A universal converter package
 Home-page: https://github.com/LazimR/CunitPy
 Author: Lázaro Claubert
@@ -20,7 +20,7 @@ License-File: LICENSE
 #
 ## Installation
 ```
-pip install cunitPy
+pip install cunitpy
 ```
 
 #

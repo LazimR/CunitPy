@@ -4,7 +4,7 @@
 #
 ## Installation
 ```
-pip install cunitPy
+pip install cunitpy
 ```
 
 #
