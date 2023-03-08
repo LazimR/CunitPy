@@ -351,7 +351,7 @@ class Length(abc.ABC):
         if Verify.checkValue(length):
             return length / 5280
 
-    # Jarda
+    # Yard
     def yard2nanometer(length):
         if Verify.checkValue(length):
             return length * 9.144*10**8
