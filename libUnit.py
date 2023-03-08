@@ -285,6 +285,7 @@ class Length(abc.ABC):
         if Verify.checkValue(length):
             return length * 25400
 
+    # Inch
     def inch2millimeter(length):
         if Verify.checkValue(length):
             return length * 25.4
@@ -313,6 +314,7 @@ class Length(abc.ABC):
         if Verify.checkValue(length):
             return length / 63360
 
+    # Feet
     def feet2nanometer(length):
         if Verify.checkValue(length):
             return length * 3.048*10**8
@@ -349,6 +351,7 @@ class Length(abc.ABC):
         if Verify.checkValue(length):
             return length / 5280
 
+    # Jarda
     def yard2nanometer(length):
         if Verify.checkValue(length):
             return length * 9.144*10**8
@@ -385,6 +388,7 @@ class Length(abc.ABC):
         if Verify.checkValue(length):
             return length / 1760
 
+    # Mile
     def mile2nanometer(length):
         if Verify.checkValue(length):
             return length * 1.609*10**12
@@ -422,8 +426,9 @@ class Length(abc.ABC):
             return length * 1760
 
 
-class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
+class Mass(abc.ABC):
     
+    # Microgram
     def microgram2milligram(mass):
         if Verify.checkValue(mass):
             return mass / 1000    
@@ -448,6 +453,7 @@ class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
         if Verify.checkValue(mass):
             return mass / 1000
     
+    # Milligram
     def milligram2microgram(mass):
         if Verify.checkValue(mass):
             return mass * 1000
@@ -471,6 +477,135 @@ class Mass(abc.ABC): # mg, g, kg, short ton, metric ton, oz, lbs, stone...
     def milligram2pound(mass):
         if Verify.checkValue(mass):
             return mass / 453600
+
+    # Gram
+    def gram2microgram(mass):
+        if Verify.checkValue(mass):
+            return mass * 1*10**6
+
+    def gram2milligram(mass):
+        if Verify.checkValue(mass):
+            return mass * 1000
+
+    def gram2kilogram(mass):
+        if Verify.checkValue(mass):
+            return mass / 1000
+    
+    def gram2ton(mass):
+        if Verify.checkValue(mass):
+            return mass / 1*10**6
+    
+    def gram2ounce(mass):
+        if Verify.checkValue(mass):
+            return mass / 28.35
+
+    def gram2pound(mass):
+        if Verify.checkValue(mass):
+            return mass / 453.3
+
+    # Kilogram
+    def kilogram2microgram(mass):
+        if Verify.checkValue(mass):
+            return mass * 1*10**9
+
+    def kilogram2milligram(mass):
+        if Verify.checkValue(mass):
+            return mass * 10**6
+    
+    def kilogram2gram(mass):
+        if Verify.checkValue(mass):
+            return mass * 1000
+    
+    def kilogram2ton(mass):
+        if Verify.checkValue(mass):
+            return mass / 1000
+    
+    def kilogram2ounce(mass):
+        if Verify.checkValue(mass):
+            return mass * 35.274
+
+    def kilogram2pound(mass):
+        if Verify.checkValue(mass):
+            return mass * 2.205
+    
+    # Ton
+    def ton2microgram(mass):
+        if Verify.checkValue(mass):
+            return mass * 2.205
+
+    def ton2microgram(mass):
+        if Verify.checkValue(mass):
+            return mass * 10**12
+
+    def ton2milligram(mass):
+        if Verify.checkValue(mass):
+            return mass * 10**9
+
+    def ton2gram(mass):
+        if Verify.checkValue(mass):
+            return mass * 10**6
+    
+    def ton2kilogram(mass):
+        if Verify.checkValue(mass):
+            return mass * 1000
+
+    def ton2ounce(mass):
+        if Verify.checkValue(mass):
+            return mass * 35270
+
+    def ton2pound(mass):
+        if Verify.checkValue(mass):
+            return mass * 2205
+
+    # Ounce
+    def ounce2microgram(mass):
+        if Verify.checkValue(mass):
+            return mass * 2.835*10**7
+    
+    def ounce2milligram(mass):
+        if Verify.checkValue(mass):
+            return mass * 28350
+
+    def ounce2gram(mass):
+        if Verify.checkValue(mass):
+            return mass * 28.35
+
+    def ounce2kilogram(mass):
+        if Verify.checkValue(mass):
+            return mass / 35.274
+    
+    def ounce2ton(mass):
+        if Verify.checkValue(mass):
+            return mass / 35270
+    
+    def ounce2pound(mass):
+        if Verify.checkValue(mass):
+            return mass / 16
+
+    # Pound
+    def pound2microgram(mass):
+        if Verify.checkValue(mass):
+            return mass * 4.536*10**8
+    
+    def pound2milligram(mass):
+        if Verify.checkValue(mass):
+            return mass * 453600
+    
+    def pound2gram(mass):
+        if Verify.checkValue(mass):
+            return mass * 453.6
+    
+    def pound2kilogram(mass):
+        if Verify.checkValue(mass):
+            return mass / 2.205
+    
+    def pound2ton(mass):
+        if Verify.checkValue(mass):
+            return mass / 2205
+
+    def pound2ounce(mass):
+        if Verify.checkValue(mass):
+            return mass * 16
 
 class Time(abc.ABC):
 
