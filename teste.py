@@ -1,4 +1,4 @@
-from libUnit import Currency, Temperature
+from src.cunitpy import *
 print(Currency.JPY2USD(137))
 print(Currency.JPY2GBP(130))
 
