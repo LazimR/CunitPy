@@ -10,6 +10,7 @@ Welcome to Cunitpy's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   modulo1
 
 
 Indices and tables

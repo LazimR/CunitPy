@@ -13,7 +13,7 @@ html_context = {'github_url': 'https://github.com/LazimR/CunitPy'}
 
 extensions = ['sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.ext.autodoc']
 
-project = 'Cunitpy'
+project = 'CunitPy'
 copyright = '2023, Lazim Claubert, Kennedy Souza'
 author = 'Lazim Claubert, Kennedy Souza'
 release = '0.1'
