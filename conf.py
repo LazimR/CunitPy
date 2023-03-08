@@ -8,19 +8,18 @@
 
 html_context = {'github_url': 'https://github.com/LazimR/CunitPy'}
 
+# -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+
+extensions = ['sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.ext.autodoc']
+
 project = 'Cunitpy'
 copyright = '2023, Lazim Claubert, Kennedy Souza'
 author = 'Lazim Claubert, Kennedy Souza'
 release = '0.1'
 
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
-extensions = []
-
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
 
 
 # -- Options for HTML output -------------------------------------------------
