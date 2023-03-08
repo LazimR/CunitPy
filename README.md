@@ -9,13 +9,11 @@ pip install cunitpy
 
 #
 ## How to use
-### Import
 ```
 from cunitpy import *
 ```
 #### Now, use the pattern bellow to asign a variable the converted value: 
 ##### *Quantity.your_measurement_unit2new_measurement_unit(value)*
-.
 ### Examples:
 ```py
 # 38° Celsius to Kelvin
